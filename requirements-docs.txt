@@ -1,0 +1,20 @@
+# MkDocs 문서 사이트 빌드 의존성
+# 로컬 미리보기:  pip install -r requirements-docs.txt && mkdocs serve
+
+mkdocs==1.6.1
+mkdocs-material==9.6.14
+
+# .pages 파일로 목차 제목/순서 제어
+mkdocs-awesome-pages-plugin==2.10.1
+
+# 이미지 클릭 확대(라이트박스)
+mkdocs-glightbox==0.4.0
+
+# 페이지 하단 최종 수정일 (git 히스토리 필요 → fetch-depth: 0)
+mkdocs-git-revision-date-localized-plugin==1.4.7
+
+# HTML/CSS/JS 최소화
+mkdocs-minify-plugin==0.8.0
+
+# admonition / details / superfences(mermaid) / tasklist 등
+pymdown-extensions==10.15

@@ -1,0 +1,163 @@
+site_name: KDC 메타버스 노코드 강의
+site_description: 코드 없이 배우는 Unity 메타버스 강의 교안
+site_author: KooHoo-Dev
+site_url: https://koohoo-dev.github.io/kdc-meta-verse-nocode-lecture/
+
+repo_name: KooHoo-Dev/kdc-meta-verse-nocode-lecture
+repo_url: https://github.com/KooHoo-Dev/kdc-meta-verse-nocode-lecture
+edit_uri: edit/main/Docs/1.%20NoCode/
+
+# 배포 대상: Docs/1. NoCode 하위만
+docs_dir: Docs/1. NoCode
+site_dir: site
+
+copyright: Copyright &copy; KooHoo-Dev
+
+exclude_docs: |
+  .idea/
+  *.tmp
+
+theme:
+  name: material
+  language: ko
+  font:
+    text: Noto Sans KR
+    code: JetBrains Mono
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: 시스템 설정 따르기
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: 다크 모드로 전환
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: 라이트 모드로 전환
+  features:
+    # 내비게이션
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - navigation.footer
+    - toc.follow
+    # 검색
+    - search.highlight
+    - search.share
+    - search.suggest
+    # 콘텐츠
+    - content.action.edit
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - content.tooltips
+
+plugins:
+  # 폴더의 .pages 파일로 목차 제목/순서 제어
+  - awesome-pages
+  - search:
+      lang:
+        - ko
+        - en
+      # 한글 문서 기준: 공백 + 문장부호로 토큰 분리
+      separator: '[\s\-·—,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;'
+  # 이미지 클릭 시 확대(라이트박스)
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      zoomable: true
+      draggable: true
+      auto_caption: true
+      caption_position: bottom
+      skip_classes:
+        - no-lightbox
+  # 페이지 하단 "최종 수정일" (workflow 에서 fetch-depth: 0 필요)
+  - git-revision-date-localized:
+      type: date
+      locale: ko
+      enable_creation_date: false
+      fallback_to_build_date: true
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+        remove_comments: true
+      cache_safe: true
+
+markdown_extensions:
+  # 기본
+  - abbr
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: ¶
+      permalink_title: 이 위치로 링크
+      toc_depth: 3
+      slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
+
+  # !!! note / ??? success (접히는 블록)
+  - admonition
+  - pymdownx.details
+
+  # 코드 블록 + ```mermaid 다이어그램 렌더링
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+      use_pygments: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      check_paths: true
+
+  # 부가 문법
+  - pymdownx.tabbed:
+      alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: false
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.smartsymbols
+  - pymdownx.keys
+  - pymdownx.betterem
+  - pymdownx.saneheaders
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/KooHoo-Dev/kdc-meta-verse-nocode-lecture
+      name: GitHub 저장소

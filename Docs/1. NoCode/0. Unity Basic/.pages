@@ -1,0 +1,4 @@
+title: 🎮 Unity Basic
+nav:
+  - '01. Unity와 첫 만남': 01_unity_engine_nocode.md
+  - '01. VOD 녹화 스크립트': 1차시_unity_engine_vod_script.md
