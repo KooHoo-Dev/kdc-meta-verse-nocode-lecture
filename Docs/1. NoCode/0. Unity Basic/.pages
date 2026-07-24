@@ -1,4 +1,8 @@
 title: 🎮 Unity Basic
 nav:
   - '01. Unity와 첫 만남': 01_unity_engine_nocode.md
-  - '01. VOD 녹화 스크립트': 1차시_unity_engine_vod_script.md
+  - '01. VOD 녹화 스크립트': 01_unity_engine_vod_script.md
+  - '02. Unity 작업실 둘러보기': 02_unity_editor_nocode.md
+  - '02. VOD 녹화 스크립트': 02_unity_editor_vod_script.md
+  - '03. 세 창을 오가며 만들기': 03_scene_hierarchy_inspector_nocode.md
+  - '03. VOD 녹화 스크립트': 03_scene_hierarchy_inspector_vod_script.md

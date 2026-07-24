@@ -11,8 +11,25 @@ GitHub Pages에 자동 배포됩니다.
 
 ### 로컬 미리보기
 
+최초 1회 설치:
+
 ```bash
 pip install -r requirements-docs.txt
+```
+
+**방법 1 — HTML 파일로 열기** (배포를 기다리기 싫을 때)
+
+```bash
+powershell -ExecutionPolicy Bypass -File preview-docs.ps1
+```
+
+`site-offline/` 에 실제 `.html` 파일로 빌드한 뒤 브라우저를 띄웁니다.
+[mkdocs.offline.yml](mkdocs.offline.yml) 이 `use_directory_urls: false` 와 Material `offline` 플러그인을 써서
+서버 없이 `file://` 로 열어도 링크·검색이 동작합니다.
+
+**방법 2 — 개발 서버** (문서를 계속 고칠 때. 저장하면 자동 새로고침)
+
+```bash
 mkdocs serve
 ```
 

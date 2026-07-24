@@ -100,4 +100,5 @@ InitTestScene*.unity*
 
 # MkDocs
 /site/
+/site-offline/
 .cache/

@@ -23,6 +23,10 @@ hide:
 
     [:octicons-arrow-right-24: 1차시 — Unity와 첫 만남](0. Unity Basic/01_unity_engine_nocode.md)
 
+    [:octicons-arrow-right-24: 2차시 — Unity 작업실 둘러보기](0. Unity Basic/02_unity_editor_nocode.md)
+
+    [:octicons-arrow-right-24: 3차시 — 세 창을 오가며 만들기](0. Unity Basic/03_scene_hierarchy_inspector_nocode.md)
+
 </div>
 
 ---

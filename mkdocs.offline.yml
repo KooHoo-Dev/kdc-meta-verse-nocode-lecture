@@ -1,0 +1,91 @@
+# ------------------------------------------------------------------
+# 로컬에서 html 파일을 직접 열어보기 위한 설정 (file:// 전용)
+#
+#   mkdocs build -f mkdocs.offline.yml
+#   → site-offline/index.html 더블클릭
+#
+# mkdocs.yml 의 설정을 그대로 물려받고, file:// 에서 깨지는 부분만 바꿉니다.
+# ------------------------------------------------------------------
+INHERIT: mkdocs.yml
+
+# 서버 없이 열려면 각 페이지가 실제 .html 파일이어야 함
+# (기본값 true 는 폴더/index.html 구조라 file:// 에서 링크가 깨집니다)
+use_directory_urls: false
+
+site_dir: site-offline
+
+# 절대경로 canonical 이 필요 없고, 있으면 offline 플러그인이 경고합니다
+site_url: ''
+
+theme:
+  name: material
+  language: ko
+  font:
+    text: Noto Sans KR
+    code: JetBrains Mono
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: 시스템 설정 따르기
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: 다크 모드로 전환
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: 라이트 모드로 전환
+  features:
+    # navigation.instant 는 fetch 기반이라 file:// 에서 동작하지 않아 제외
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - navigation.footer
+    - toc.follow
+    - search.highlight
+    - search.share
+    - search.suggest
+    - content.action.edit
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - content.tooltips
+
+plugins:
+  - awesome-pages
+  - search:
+      lang:
+        - ko
+        - en
+      separator: '[\s\-·—,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;'
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      zoomable: true
+      draggable: true
+      auto_caption: true
+      caption_position: bottom
+      skip_classes:
+        - no-lightbox
+  - git-revision-date-localized:
+      type: date
+      locale: ko
+      enable_creation_date: false
+      fallback_to_build_date: true
+  # 검색 인덱스를 HTML 안에 심어서 file:// 에서도 검색이 되게 함
+  # (Worker/fetch 가 막히는 file:// 환경 대응 — Material 내장 플러그인)
+  - offline
