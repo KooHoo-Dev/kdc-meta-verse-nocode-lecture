@@ -15,19 +15,57 @@ hide:
 
 <div class="grid cards" markdown>
 
--   :material-cube-outline: **0. Unity Basic**
+-   :material-rocket-launch-outline: **0. 시작하기**
 
     ---
 
-    Unity가 어떤 도구인지, 부품을 조립해서 물건을 만드는 방식을 다룹니다.
+    Unity가 어떤 도구인지 보고, 설치해서 첫 프로젝트를 만듭니다.
 
-    [:octicons-arrow-right-24: 1차시 — Unity와 첫 만남](0. Unity Basic/01_unity_engine_nocode.md)
+    [:octicons-arrow-right-24: 11차시 — 왜 메타버스에 유니티인가](0. 시작하기/11_why_unity_nocode.md)
 
-    [:octicons-arrow-right-24: 2차시 — Unity 작업실 둘러보기](0. Unity Basic/02_unity_editor_nocode.md)
+    [:octicons-arrow-right-24: 12차시 — Unity 설치하고 첫 프로젝트](0. 시작하기/12_setup_nocode.md)
 
-    [:octicons-arrow-right-24: 3차시 — 세 창을 오가며 만들기](0. Unity Basic/03_scene_hierarchy_inspector_nocode.md)
+-   :material-cube-outline: **1. Unity 기초**
+
+    ---
+
+    Unity 작업 화면에 익숙해지고, 부품을 조립해서 물건을 만드는 방식을 다룹니다.
+
+    [:octicons-arrow-right-24: 13차시 — Unity 작업실 둘러보기](1. Unity 기초/13_unity_editor_nocode.md)
+
+    [:octicons-arrow-right-24: 14차시 — 부품을 붙여 자동차 만들기](1. Unity 기초/14_gameobject_component_nocode.md)
+
+    [:octicons-arrow-right-24: 15차시 — 재료 넣기와 붕어빵 틀](1. Unity 기초/15_data_prefab_nocode.md)
+
+    [:octicons-arrow-right-24: 16차시 — 화면에 그리는 부품들](1. Unity 기초/16_renderer_nocode.md)
+
+-   :material-image-frame: **2. UGUI**
+
+    ---
+
+    점수판·버튼처럼 화면에 딱 붙어 있는 것들을 만듭니다.
+
+    [:octicons-arrow-right-24: 17차시 — 화면 위에 올리는 것들](2. UGUI/17_ugui_canvas_nocode.md)
+
+    [:octicons-arrow-right-24: 18차시 — 누르고 움직이는 것들](2. UGUI/18_ugui_button_slider_nocode.md)
+
+    [:octicons-arrow-right-24: 19차시 — 화면이 눌리는 원리와 조작 패널](2. UGUI/19_ugui_eventsystem_nocode.md)
+
+-   :material-cube-scan: **3. 오브젝트 다루기**
+
+    ---
+
+    물건을 움직이고, 떨어뜨리고, 부딪히면 반응하게 만듭니다.
+
+    [:octicons-arrow-right-24: 20차시 — X · Y · Z, 드디어](3. 오브젝트 다루기/20_transform_nocode.md)
+
+    [:octicons-arrow-right-24: 21차시 — 떨어뜨리고 부딪히기](3. 오브젝트 다루기/21_rigidbody_collider_nocode.md)
 
 </div>
+
+!!! note "나머지 차시는 순차적으로 열립니다"
+    **15차시부터는 준비되는 대로 하나씩 올라갑니다.**
+    각 차시는 **앞 차시 결과물을 이어서** 가지만, 막히셨을 때를 위해 **차시별 완성 파일**도 함께 드립니다.
 
 ---
 
