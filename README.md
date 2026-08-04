@@ -2,6 +2,13 @@
 
 KDC 메타버스 노코드 강의 프로젝트입니다.
 
+> [!IMPORTANT]
+> **작업을 이어서 하신다면 [HANDOFF.md](HANDOFF.md) 를 먼저 읽어주세요.**
+> 현재 진행 현황 · 확정된 결정 · 다음 할 일 · 주의할 함정이 정리되어 있습니다.
+>
+> 특히 **다른 PC에서 Unity를 처음 열기 전에** `HANDOFF.md` §3 을 반드시 확인하세요.
+> `.meta` 파일 처리를 잘못하면 부품 연결이 전부 끊어집니다.
+
 ## 📖 강의 교안 사이트
 
 **https://koohoo-dev.github.io/kdc-meta-verse-nocode-lecture/**
