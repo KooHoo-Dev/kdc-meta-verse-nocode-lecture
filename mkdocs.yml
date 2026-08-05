@@ -16,6 +16,13 @@ copyright: Copyright &copy; KooHoo-Dev
 exclude_docs: |
   .idea/
   *.tmp
+  # ── 검증 전 초안 (배포 보류) ──────────────────────────────
+  # 아직 🟨 표시(미확정 지점)가 남아 있어 배포하지 않습니다.
+  #   4. 사격장 → U-7  검증 후 공개 (plans/05 §3)
+  #   5. XR    → U-9  검증 후 공개
+  # 공개할 때는 해당 줄만 지우면 됩니다. 파일은 이미 제자리에 있습니다.
+  4. 사격장/
+  5. XR/
 
 theme:
   name: material
