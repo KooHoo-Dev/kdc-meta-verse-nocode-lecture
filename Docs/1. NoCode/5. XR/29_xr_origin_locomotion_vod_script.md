@@ -96,7 +96,7 @@
 
 **4.** 키에서 손을 뗀 채로 계속 마우스 이동 → **여전히 왼손**
 
-⚠️ **주의 — 여기가 오늘 가장 헷갈리는 지점입니다**
+- **키에서 손을 뗐는데도 계속 움직이는 장면**을 꼭 담으세요. 아래 대사만으로는 안 믿습니다.
 
 🗣
 > "여기 보세요. **제가 키에서 손을 뗐는데도** 계속 왼손이 움직입니다.
@@ -169,8 +169,6 @@
 > 그게 **14차시의 묶은 것 · 묶인 것** 이었습니다.
 >
 > VR도 **똑같습니다.** 달라진 건 **손이 생겼다**는 것뿐이에요."
-
-⚠️ **주의 — 오늘 가장 헷갈리는 부분입니다**
 
 🖥 **화면**: 에디터로 전환 — `Main Camera` 의 Position 값을 손으로 바꿔본 뒤 ▶ 를 누르면 **원래대로 돌아가는 장면**
 
@@ -320,22 +318,33 @@
 
 ## **시연 A — 몸을 열어보기 (00:27 ~ 00:32)**
 
-**1.** ▶ 끄기 → Hierarchy에서 맨 위 `XR Origin (XR Rig)` 선택 → 조종석을 **천천히 아래로 스크롤**
+**1.** ▶ 끄기 → 맨 위 `XR Origin (XR Rig)` 선택 → 조종석을 내려봐도 **이동 부품이 없음**
+
+⚠️ **주의 — 여기서 가장 많이 헤매십니다. 일부러 한 번 못 찾아주세요**
 
 🗣
-> "▶ 를 끄고, **맨 위 `XR Origin (XR Rig)`** 을 고릅니다. **몸**이죠.
+> "▶ 를 끄고, **맨 위 `XR Origin (XR Rig)`** 을 고르겠습니다. **몸**이죠.
+> 조종석을 내려보면… **걷기 부품이 없습니다.**
 >
-> 그리고 조종석을 **아래로 쭉 내려보겠습니다.** 천천히요."
+> 여기 있을 것 같은데 없어요. **한 단계 더 들어가야** 합니다."
 
-- **스크롤은 아주 느리게.** 이름이 지나가는 걸 눈으로 따라올 시간을 주세요.
+**2.** `XR Origin (XR Rig)` 펼치기 → `Locomotion` 펼치기
 
 🗣
-> "이름이 잔뜩 있죠. 하나씩 짚어보겠습니다.
+> "**`XR Origin (XR Rig)`** 을 펼치고, 그 안의 **`Locomotion`** 을 다시 펼치겠습니다.
 >
-> **Dynamic Move Provider** — **걷기**입니다.
-> **Snap Turn Provider** — **딱딱 끊어 돌기.**
-> **Continuous Turn Provider** — **부드럽게 돌기.**
-> **Teleportation Provider** — **순간이동.** 이건 31차시에 씁니다.
+> **여기 있습니다.** 이름만 봐도 뭔지 아시겠죠?
+>
+> **`Move`** — 걷기. **`Turn`** — 돌기. **`Teleportation`** — 순간이동, 31차시에 씁니다.
+> `Grab Move`, `Gravity`, `Jump` 도 있는데 오늘은 넘어갑니다."
+
+- **펼치는 과정을 천천히 담으세요.** 접혀 있어서 못 찾는 게 이 구간 1위 질문입니다.
+
+**3.** `Move` 클릭 → 조종석에 `Dynamic Move Provider` / `Turn` 클릭 → 두 부품이 같이
+
+🗣
+> "**`Move`** 를 눌러보면 조종석에 **`Dynamic Move Provider`**. 걷기입니다.
+> **`Turn`** 을 눌러보면 **`Snap Turn Provider`** 와 **`Continuous Turn Provider`**, **둘 다** 있고요.
 >
 > 자, 질문입니다. **이거 누가 붙였을까요?**"
 
@@ -417,13 +426,13 @@
 
 ```
 실습 ③
-① ▶ 끄고 맨 위 XR Origin (XR Rig) 선택
-② 조종석을 아래로 내려 부품 이름 찾기
-     Dynamic Move Provider / Snap Turn Provider
-     Continuous Turn Provider / Teleportation Provider
-③ Snap Turn Provider 체크 해제 → ▶ → 안 돌아가는 것 확인
-④ ▶ 끄고 다시 체크 → ▶ → 돌아가는 것 확인
-⑤ ▶ 누르고 Game 창 클릭 → 걸어보고 돌아보기
+① ▶ 끄고 XR Origin (XR Rig) 펼치기 → Locomotion 펼치기
+② 안에 있는 것 확인
+     Move / Turn / Teleportation / Grab Move / Gravity / Jump
+③ Move 클릭 → 조종석에 Dynamic Move Provider
+   Turn 클릭 → Snap Turn + Continuous Turn 둘 다
+④ Turn 의 Snap Turn Provider 체크 해제 → ▶ → 안 돌아가는 것 확인
+⑤ ▶ 끄고 다시 체크 → ▶ → 돌아가는 것 확인
 ```
 
 ---
@@ -434,10 +443,12 @@
 > "마지막입니다. **선택이니까 안 하셔도 됩니다.**
 > 아까 말씀드린 **멀미** 이야기를 직접 겪어보는 시간이에요."
 
-**1.** `XR Origin` 의 끊어 돌기 부품 **체크 해제** → 부드럽게 돌기 부품 추가 → ▶
+**1.** `XR Origin (XR Rig)` ▸ `Locomotion` ▸ **`Turn`** 선택 → `Snap Turn Provider` **체크 해제** → ▶
 
 🗣
-> "**Snap Turn Provider 체크를 끄고**, **Continuous Turn Provider 는 켜둡니다.**
+> "아까 그 **`Turn`** 을 다시 고릅니다. 조종석에 **두 부품이 나란히** 있죠.
+>
+> **Snap Turn Provider 체크를 끄고**, **Continuous Turn Provider 는 켜둡니다.**
 > ▶ 눌러서 돌아보겠습니다. …**스르륵** 돌아가죠?"
 
 **2.** 반대로 바꿔서 비교
@@ -469,7 +480,7 @@
 
 ```
 실습 ④ (선택)
-① ▶ 끄고 XR Origin (XR Rig) 선택
+① ▶ 끄고 XR Origin (XR Rig) ▸ Locomotion ▸ Turn 선택
 ② Snap Turn Provider 체크 해제 / Continuous Turn Provider 켜두기
 ③ ▶ 눌러서 스르륵 도는 것 확인
 ④ 반대로 바꿔서 툭툭 끊어 도는 것 확인

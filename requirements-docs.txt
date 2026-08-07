@@ -18,3 +18,11 @@ mkdocs-minify-plugin==0.8.0
 
 # admonition / details / superfences(mermaid) / tasklist 등
 pymdown-extensions==10.15
+
+# 코드 블록 강조 — mkdocs-material 의 간접 의존이라 원래는 안 적혀 있었습니다.
+#
+# ⚠️ 고정하지 않으면 로컬과 CI 에 서로 다른 버전이 깔립니다.
+#    실제로 그 때문에 "로컬에서는 빌드가 깨지는데 CI 는 통과"하는 일이 있었습니다.
+#    (2.20.0 부터 잘못 들여쓴 blockquote 가 코드 블록으로 잡히며 크래시)
+#    로컬에서 잡히는 오류가 CI 에서도 잡히도록 반드시 고정해 두세요.
+pygments==2.20.0
