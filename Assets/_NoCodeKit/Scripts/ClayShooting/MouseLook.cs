@@ -9,7 +9,8 @@ using UnityEngine.InputSystem;
 /// <b>카메라에 붙입니다.</b> 좌우는 부모(Player)를 돌리고, 위아래는 자기(Camera)를 돌립니다.
 /// 이게 1인칭의 표준 구조입니다.
 ///
-/// 커서를 잠그면 화면의 버튼을 누를 수 없으므로 <c>Esc</c> 로 풀 수 있게 해두었습니다.
+/// 커서를 잠그면 화면의 버튼을 누를 수 없으므로 <c>Esc</c> 로 잠깐 풀 수 있게 해두었습니다.
+/// <b>화면을 다시 누르면 잠깁니다.</b> 안 그러면 한 번 풀고 나서 둘러볼 수가 없습니다.
 /// </summary>
 [AddComponentMenu("NoCode Kit/Clay Shooting/Mouse Look")]
 [DisallowMultipleComponent]
@@ -28,7 +29,8 @@ public class MouseLook : MonoBehaviour
     [Tooltip("위로 얼마나 올려다볼 수 있는지 (각도)")]
     public float maxAngle = 80f;
 
-    [Tooltip("체크하면 커서가 화면 가운데에 잠깁니다. Esc 로 풀 수 있습니다.")]
+    [Tooltip("체크하면 커서가 화면 가운데에 잠깁니다. " +
+             "Esc 로 잠깐 풀 수 있고, 화면을 다시 누르면 잠깁니다.")]
     public bool lockCursor = true;
 
     float pitch;          // 위아래 각도
@@ -58,10 +60,16 @@ public class MouseLook : MonoBehaviour
 
     void Update()
     {
-        // Esc 를 누르면 커서가 풀립니다. 화면의 버튼을 누를 때 필요합니다.
+        // Esc 를 누르면 커서가 잠깐 풀립니다. 화면의 버튼을 누를 때 필요합니다.
+        // 이때 Lock Cursor 체크는 건드리지 않습니다. 돌아올 길을 남겨두는 겁니다.
         if (EscapePressed())
         {
-            UnlockCursor();
+            ApplyCursor(false);
+        }
+        // 화면을 다시 누르면 잠깁니다. Esc 로 풀어둔 데서 되돌아오는 길입니다.
+        else if (lockCursor && Cursor.lockState != CursorLockMode.Locked && ClickPressed())
+        {
+            ApplyCursor(true);
         }
 
         // 커서가 풀려 있으면 둘러보지 않습니다. 안 그러면 버튼을 누르다가 시점이 돌아갑니다.
@@ -88,7 +96,10 @@ public class MouseLook : MonoBehaviour
         ApplyCursor(true);
     }
 
-    /// <summary>커서를 풀어 화면의 버튼을 누를 수 있게 합니다.</summary>
+    /// <summary>
+    /// 커서를 풀어 화면의 버튼을 누를 수 있게 합니다. 게임 종료에 연결해서 씁니다.
+    /// <b>Esc 와 달리 잠금 자체를 끕니다.</b> 그래서 화면을 눌러도 다시 잠기지 않습니다.
+    /// </summary>
     public void UnlockCursor()
     {
         lockCursor = false;
@@ -110,6 +121,16 @@ public class MouseLook : MonoBehaviour
         return m == null ? Vector2.zero : m.delta.ReadValue();
 #else
         return new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+#endif
+    }
+
+    static bool ClickPressed()
+    {
+#if ENABLE_INPUT_SYSTEM
+        var m = Mouse.current;
+        return m != null && m.leftButton.wasPressedThisFrame;
+#else
+        return Input.GetMouseButtonDown(0);
 #endif
     }
 

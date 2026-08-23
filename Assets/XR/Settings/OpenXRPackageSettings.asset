@@ -343,25 +343,25 @@ MonoBehaviour:
   m_Name: Android
   m_EditorClassIdentifier: Unity.XR.OpenXR::UnityEngine.XR.OpenXR.OpenXRSettings
   features:
-  - {fileID: 6684656119328292157}
-  - {fileID: 8795308188245426778}
-  - {fileID: 6238215258814352578}
-  - {fileID: -259882834566722712}
-  - {fileID: -129473124474874337}
-  - {fileID: -4741215837491978668}
-  - {fileID: 8415810799140424165}
-  - {fileID: -1371348178652667259}
-  - {fileID: 3691331580869431090}
-  - {fileID: 1029448077827554257}
-  - {fileID: 7326890280077770945}
   - {fileID: 767282686016165910}
+  - {fileID: 5177038882738933201}
+  - {fileID: -129473124474874337}
+  - {fileID: 7326890280077770945}
+  - {fileID: 3691331580869431090}
+  - {fileID: -5283806705324442042}
+  - {fileID: 7458267819253934836}
   - {fileID: 433531769612923995}
   - {fileID: 382373933076082242}
-  - {fileID: -4417537272517057299}
-  - {fileID: 7458267819253934836}
-  - {fileID: -5283806705324442042}
+  - {fileID: -259882834566722712}
   - {fileID: -7066624322069694464}
-  - {fileID: 5177038882738933201}
+  - {fileID: 1029448077827554257}
+  - {fileID: -1371348178652667259}
+  - {fileID: 6238215258814352578}
+  - {fileID: 8795308188245426778}
+  - {fileID: 8415810799140424165}
+  - {fileID: -4741215837491978668}
+  - {fileID: 6684656119328292157}
+  - {fileID: -4417537272517057299}
   customLoaderName: 
   m_renderMode: 1
   m_latencyOptimization: 0
@@ -374,7 +374,7 @@ MonoBehaviour:
   m_symmetricProjection: 0
   m_optimizeMultiviewRenderRegions: 0
   m_multiviewRenderRegionsOptimizationMode: 0
-  m_hasMigratedMultiviewRenderRegionSetting: 0
+  m_hasMigratedMultiviewRenderRegionSetting: 1
   m_foveatedRenderingApi: 0
   m_useOpenXRPredictedTime: 0
 --- !u!114 &-1729066542722565676
@@ -559,7 +559,7 @@ MonoBehaviour:
   lateLatchingDebug: 0
   optimizeMultiviewRenderRegions: 0
   m_multiviewRenderRegionsOptimizationMode: 0
-  m_hasMigratedMultiviewRenderRegions: 0
+  m_hasMigratedMultiviewRenderRegions: 1
   spacewarpMotionVectorTextureFormat: 0
 --- !u!114 &-129473124474874337
 MonoBehaviour:
@@ -975,7 +975,7 @@ MonoBehaviour:
   m_symmetricProjection: 0
   m_optimizeMultiviewRenderRegions: 0
   m_multiviewRenderRegionsOptimizationMode: 0
-  m_hasMigratedMultiviewRenderRegionSetting: 0
+  m_hasMigratedMultiviewRenderRegionSetting: 1
   m_foveatedRenderingApi: 0
   m_useOpenXRPredictedTime: 0
 --- !u!114 &7788736047377306089

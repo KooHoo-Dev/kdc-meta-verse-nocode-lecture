@@ -368,7 +368,17 @@
 >
 > 붙이긴 붙였는데 왜 안 될까요."
 
-**4-2.** ▶ 끄고 `Interaction Layer Mask` → `Default` 끄고 `Teleport` 켜기
+**4-2.** ▶ 끄고 `Interaction Layer Mask` → **`Edit Layers...` 로 `Teleport` 만들기** → `Default` 끄고 `Teleport` 켜기
+
+🗣
+> "칸을 눌러보면 — **`Default` 하나뿐입니다.** `Teleport` 가 없어요.
+>
+> **아직 안 만들었기 때문입니다.** 맨 아래 **`Edit Layers...`** 를 누르면 빈 칸이 쭉 나오는데,
+> **`Default` 아래 첫 번째 빈 칸**에 **`Teleport`** 라고 적으면 끝입니다.
+>
+> **21차시에 `Add Tag...` 로 이름표를 만들었던 것과 완전히 같습니다.**
+> 만들어야 고를 수 있어요."
+
 
 🗣
 > "**`Interaction Layer Mask`** 라는 칸이 있습니다. 지금 **`Default`** 로 되어 있죠.
@@ -433,7 +443,9 @@
 ③ G 를 누른 채로 → 잡힘 (떼면 놓음)
 ④ G 를 누른 채 휘두르다가 도중에 떼기 → 던져짐
 ⑤ ▶ 끄고 바닥(Plane) 선택 → Add Component → Teleportation Area
-⑥ Interaction Layer Mask → Default 끄고 Teleport 켜기  ← 빼먹으면 빨간 선
+⑥ Interaction Layer Mask → Edit Layers... → 빈 칸에 "Teleport" 적기
+   (목록에 Teleport 가 없으면 이것부터. 21차시 Add Tag 와 같습니다)
+⑦ Default 끄고 Teleport 켜기  ← 빼먹으면 빨간 선
 ⑦ ▶ → I 를 누른 채 바닥 조준 → I 를 떼면 이동
 ```
 
@@ -575,6 +587,7 @@
 | 던져지지 않고 툭 떨어져요 | **00:31** — 휘두르면서 놓기 · `Throw On Detach` |
 | 선을 바닥에 대도 아무 일이 없어요 | **00:34** — 순간이동 바닥 부품 |
 | **순간이동 선이 빨개요** | **00:34** — **실패 장면을 일부러 담아** 해소. `Interaction Layer Mask` |
+| 목록에 `Teleport` 가 없어요 | **00:34** — `Edit Layers...` 로 먼저 만들기. 21차시 이름표와 같음 |
 | 순간이동은 무슨 키인가요 | **00:34** — **`I`** (스틱 앞으로), 떼면 이동 |
 | 순간이동이 왜 필요한가요 | **00:24** — 29차시 멀미 회수 |
 | 벽 속으로 이동되면 어쩌죠 | **00:24** — 표시 붙은 곳만 |

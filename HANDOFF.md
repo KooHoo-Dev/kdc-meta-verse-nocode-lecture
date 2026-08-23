@@ -27,10 +27,10 @@ KDC 메타버스 과정 **11 ~ 33차시(총 23차시)** 를 만들고 있습니�
 
 ```
 11 ~ 21차시  ✅ 완료 (교안 11 + VOD 11 = 22개 문서)
-22 ~ 27차시  🟨 교안 6개 · VOD 2개(22·23) — 🟨 19곳이 U-7 대기
+22 ~ 27차시  🟨 교안 6개 · VOD 2개(22·23) — 🟨 11곳이 U-7 대기 (19곳에서 8곳 닫음)
 28 ~ 31차시  ✅ 교안+VOD 8개 완성 · 🟨 0곳
 32 ~ 33차시  ⬜ 미착수 — U-7 대기 (클레이 사격의 VR 재구성이라)
-교육용 컴포넌트 21개  ✅ 제작 완료
+교육용 컴포넌트 22개  ✅ 제작 완료
 ```
 
 > ⚠️ **2026-08-23 — 스펙이 바뀌었습니다**
@@ -51,8 +51,11 @@ KDC 메타버스 과정 **11 ~ 33차시(총 23차시)** 를 만들고 있습니�
 | 1 | **이 문서** | 전체 현황 |
 | 2 | `CLAUDE.md` | **프로젝트 상시 규칙** (변환 원칙 · 표현 치환표 · **마크다운 표기 규칙** · 금지 사항) |
 | 3 | `plans/00_교안_생성_프롬프트.md` | **실행 규칙** (실습 설계법 · 고정 어휘집 · 자가 검증) |
-| 4 | `plans/03_작업_우선순위.md` | 통합 백로그 · 의존 관계 |
-| 5 | `references/01_unity_engine_nocode.md` <br> `references/01_unity_engine_vod_script.md` | **골든 레퍼런스** — 구조·톤의 기준 |
+| 4 | `plans/09_에디터_도구_작업계획.md` | **지금 진행 중** — 씬 빌더 · 실습 점검기 |
+| 5 | `plans/11_폴리싱_대기_목록.md` | **소리 · 효과 파일이 오면 할 일** (잊지 않으려고 쌓는 곳) |
+| 6 | `plans/08_32차시_작업계획.md` | 32차시까지의 문서 계획 (2단계는 일시 중지) |
+| 7 | `plans/03_작업_우선순위.md` | 통합 백로그 · 의존 관계 |
+| 8 | `references/01_unity_engine_nocode.md` <br> `references/01_unity_engine_vod_script.md` | **골든 레퍼런스** — 구조·톤의 기준 |
 
 > 규칙이 충돌하면 우선순위: **`references/` > `plans/00` > `CLAUDE.md`**
 
@@ -131,7 +134,7 @@ git status --short Assets
 | 부분 | 상태 |
 | :--- | :--- |
 | 제목 · 개념 절 · 부품 표 · 정리 문제 · 용어 부록 | ✅ 확정 |
-| **실습 ①~④** | 🟨 **잠정** — 🟨 표시 **교안 17곳 + VOD 2곳**이 U-7 검증 대기 |
+| **실습 ①~④** | 🟨 **잠정** — 🟨 표시 **교안 9곳 + VOD 2곳**이 U-7 검증 대기 |
 | VOD 스크립트 | 🟨 **22 · 23차시만 작성** — 24~27은 U-7 후 |
 
 > 📝 **VOD 를 🟨 개수 순으로 씁니다**
@@ -177,7 +180,7 @@ git status --short Assets
 > **메뉴로 만든 리그는 껍데기입니다.** `Locomotion Mediator` 가 없어서 이동 부품을 붙여도 안 걸립니다.
 > Starter Assets 의 프리팹에는 걷기·돌기·순간이동이 **처음부터 다 들어 있습니다.**
 
-### 4-4. 교육용 컴포넌트 21개 (제작 완료)
+### 4-4. 교육용 컴포넌트 22개 (제작 완료)
 
 ```
 Assets/_NoCodeKit/Scripts/
@@ -188,16 +191,17 @@ Assets/_NoCodeKit/Scripts/
 ├── TransformDriver.cs      20차시
 ├── CollisionReporter.cs    21차시
 ├── SkyboxSwitcher.cs       30차시
-└── ClayShooting/           22 ~ 27차시 (14개)
+└── ClayShooting/           22 ~ 27차시 (15개)
     ├── PlayerMover.cs · MouseLook.cs
     ├── GameStarter.cs · TargetLauncher.cs · TargetLife.cs
-    ├── SimpleGun.cs · Projectile.cs · MuzzleFlashPlayer.cs ⚠️
+    ├── SimpleGun.cs · MouseShooter.cs · Projectile.cs · MuzzleFlashPlayer.cs
     ├── HitScorer.cs · Hittable.cs · FeedbackSpawner.cs
     ├── RoundTimer.cs · DifficultyPreset.cs
-    └── AudioPlayer.cs ⚠️
+    └── AudioPlayer.cs
 ```
 
-> ⚠️ 두 개는 **U-7 검증 후 버릴 수 있습니다.** (§7 함정 ③ 참고)
+> ✅ `AudioPlayer` · `MuzzleFlashPlayer` 는 **존치로 결정됐습니다** (2026-08-23 · §7 함정 ③).
+> `MouseShooter` 는 24차시의 총에서 **입력·조준을 분리**한 것입니다 (`plans/08` §5).
 
 ---
 
@@ -224,7 +228,7 @@ kdc-meta-verse-nocode-lecture/
 ├── source/                 변환 대기 원본
 ├── tools/                  한글 문자셋 2350자 · 폰트 제작 절차 · check_docs.py
 │
-└── Assets/_NoCodeKit/      교육용 컴포넌트 21개
+└── Assets/_NoCodeKit/      교육용 컴포넌트 22개
 ```
 
 ### 문서 형식 — GitHub 마크다운
@@ -287,7 +291,9 @@ kdc-meta-verse-nocode-lecture/
 
 | # | 결정 대기 | 어떻게 정해지나 |
 | :---: | :--- | :--- |
-| 1 | `MuzzleFlashPlayer` · `AudioPlayer` 를 쓸지 | **U-7 `3-6` · `6-2`** 로만 답이 나옴 |
+| ~~1~~ | ~~`MuzzleFlashPlayer` · `AudioPlayer` 를 쓸지~~ | ✅ **둘 다 존치** (2026-08-23 · §7 함정 ③) |
+
+**남은 결정 대기 없음.** 32차시까지의 계획은 `plans/08_32차시_작업계획.md` 에 있습니다.
 
 ---
 
@@ -307,12 +313,25 @@ kdc-meta-verse-nocode-lecture/
 **해결(설계 완료)**: 26차시에서 **시작 방식을 발판 → 버튼으로** 전환합니다.
 `GameStarter.StartGame` 은 **트리거로도 버튼으로도** 발동하게 만들어두었습니다.
 
-### 함정 ③ — 이미 있는 기능을 새로 만들지 마세요
+### 함정 ③ — 이미 있는 기능을 새로 만들지 마세요 ✅ **종결 (2026-08-23)**
 
-`AudioSource.Play()` · `ParticleSystem.Play()` 가 `On Click` 드롭다운에 **나오면**
-`AudioPlayer` · `MuzzleFlashPlayer` 는 **안 만들어도 됩니다.**
+원래 전제는 *"`AudioSource.Play()` · `ParticleSystem.Play()` 가 드롭다운에 나오면
+`AudioPlayer` · `MuzzleFlashPlayer` 는 안 만들어도 된다"* 였습니다.
 
-**U-7 `3-6` · `6-2` 두 줄만 확인하면 컴포넌트 2개가 사라집니다.**
+**드롭다운에는 나옵니다.** 그런데 두 부품은 **단순 래퍼가 아닙니다.**
+
+| 부품 | 내장 기능에 없는 것 |
+| :--- | :--- |
+| `AudioPlayer` | **`Random Pitch`** — 매번 높낮이를 흔들어 총소리가 기계처럼 안 들리게 |
+| `MuzzleFlashPlayer` | **`Flash Light`** 를 `Duration` 동안 켰다 끄기 |
+
+27차시는 **완성도를 올리는 차시**라 이 둘의 체감이 큽니다. → **둘 다 존치합니다.**
+`3-6` · `6-2` 는 이제 결정 항목이 아니라 **확인 항목**입니다.
+
+> 📝 **원칙 자체는 계속 유효합니다**
+>
+> 새 부품을 만들기 전에 **"유니티에 이미 있지 않은가"** 를 먼저 보세요.
+> 실제로 32차시의 `VRGunHandler` 는 이 원칙으로 **취소**됐습니다 (`plans/08` §5).
 
 ### 함정 ④ — 이 프로젝트는 새 Input System 전용입니다
 
@@ -355,7 +374,7 @@ kdc-meta-verse-nocode-lecture/
 ### 🟠 우선순위 2 — U-7 결과가 나오면
 
 1. `❌` 항목에 맞춰 **컴포넌트 수정**
-2. `Docs/1. NoCode/4. 사격장/` 의 **🟨 표시 17곳**을 실제 결과로 확정
+2. `Docs/1. NoCode/4. 사격장/` 의 **남은 🟨 표시 11곳**을 실제 결과로 확정
 3. **VOD 스크립트 4개 작성** (24~27) — 22 · 23 은 **작성 완료**
 4. `Docs/1. NoCode/README.md` 의 사격장 표에서 **🟨 준비 중** 표시를 지우고 VOD 링크 채우기
 5. `python tools/check_docs.py` + 교차 검증

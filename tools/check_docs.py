@@ -106,10 +106,15 @@ def check_file(p: pathlib.Path, rep: Report):
         elif nxt.strip() != ">":
             rep.err(rel, i, "강조 블록 제목과 본문 사이에 `>` 빈 줄이 없음")
 
-    # ── 4. C# 코드블록 ─────────────────────────────────────────
-    for i, l in enumerate(lines, 1):
-        if l.strip().startswith("```csharp") or l.strip().startswith("```cs"):
-            rep.err(rel, i, "C# 코드블록 — 노코드 교안에는 넣지 않습니다")
+    # 교안에만 적용하는 규칙과, 모든 문서에 적용하는 규칙을 나눕니다.
+    # plans/ 는 설계 문서라 C# 조각이나 용어가 나오는 게 정상입니다.
+    is_lecture = rel.startswith("Docs/")
+
+    # ── 4. C# 코드블록 (교안에만) ───────────────────────────────
+    if is_lecture:
+        for i, l in enumerate(lines, 1):
+            if l.strip().startswith("```csharp") or l.strip().startswith("```cs"):
+                rep.err(rel, i, "C# 코드블록 — 노코드 교안에는 넣지 않습니다")
 
     # ── 5. mermaid 펜스 짝 ─────────────────────────────────────
     if sum(1 for l in lines if l.strip().startswith("```")) % 2:
@@ -135,7 +140,10 @@ def check_file(p: pathlib.Path, rep: Report):
         if problems and problems != answers:
             rep.err(rel, 0, f"정리 문제 {problems}개 / 정답 보기 {answers}개 — 안 맞음")
 
-    # ── 8. 금지 용어 (치환표·부록 밖에서만) ─────────────────────
+    # ── 8. 금지 용어 (교안의 치환표·부록 밖에서만) ──────────────
+    if not is_lecture:
+        return
+
     in_fence = False
     for i, l in enumerate(lines, 1):
         if l.lstrip().startswith("```"):
