@@ -1,8 +1,0 @@
-title: 🖼 UGUI
-nav:
-  - '17. 화면 위에 올리는 것들': 17_ugui_canvas_nocode.md
-  - '17. VOD 녹화 스크립트': 17_ugui_canvas_vod_script.md
-  - '18. 누르고 움직이는 것들': 18_ugui_button_slider_nocode.md
-  - '18. VOD 녹화 스크립트': 18_ugui_button_slider_vod_script.md
-  - '19. 화면이 눌리는 원리와 조작 패널': 19_ugui_eventsystem_nocode.md
-  - '19. VOD 녹화 스크립트': 19_ugui_eventsystem_vod_script.md

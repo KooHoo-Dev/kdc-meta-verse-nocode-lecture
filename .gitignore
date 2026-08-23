@@ -98,7 +98,5 @@ InitTestScene*.unity*
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
 
-# MkDocs
-/site/
-/site-offline/
+# 도구 캐시
 .cache/

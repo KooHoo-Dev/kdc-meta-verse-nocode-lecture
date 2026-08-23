@@ -1,6 +1,15 @@
-# ARVR-Project-Templete
+# KDC 메타버스 — 노코드 Unity 강의
 
-KDC 메타버스 노코드 강의 프로젝트입니다.
+프로그래머용 Unity 교안을 **비프로그래머·노코드용 교안 + VOD 녹화 스크립트**로 변환하는 프로젝트입니다.
+KDC 메타버스 과정 **11 ~ 33차시**가 대상이고, 산출물은 차시당 두 개입니다.
+
+| | |
+| :--- | :--- |
+| **노코드 교안** (`*_nocode.md`) | 수강생이 강의 영상과 함께 보는 자료 |
+| **VOD 녹화 스크립트** (`*_vod_script.md`) | 강사가 읽는 대본 |
+
+**절대 원칙**: 수강생은 **코드를 한 줄도 치지 않습니다.** 완성된 부품(C# 스크립트)을 제공하고,
+**끌어다 놓기 · 값 바꾸기 · 목록에서 고르기**만으로 실습합니다.
 
 > [!IMPORTANT]
 > **작업을 이어서 하신다면 [HANDOFF.md](HANDOFF.md) 를 먼저 읽어주세요.**
@@ -9,73 +18,73 @@ KDC 메타버스 노코드 강의 프로젝트입니다.
 > 특히 **다른 PC에서 Unity를 처음 열기 전에** `HANDOFF.md` §3 을 반드시 확인하세요.
 > `.meta` 파일 처리를 잘못하면 부품 연결이 전부 끊어집니다.
 
-## 📖 강의 교안 사이트
+## 📖 교안 보기
 
-**https://koohoo-dev.github.io/kdc-meta-verse-nocode-lecture/**
+**[Docs/1. NoCode/](Docs/1.%20NoCode/README.md)** — 전체 강의 목록이 있습니다.
 
-`Docs/1. NoCode/` 하위 문서가 [MkDocs Material](https://squidfunk.github.io/mkdocs-material/)로 빌드되어
-GitHub Pages에 자동 배포됩니다.
+교안은 **GitHub 에서 그대로 읽는 마크다운 파일**입니다. 별도 사이트 빌드가 없으므로
+`git pull` 만 하면 바로 최신 내용을 보실 수 있습니다.
 
-### 로컬 미리보기
+> [!NOTE]
+> 예전에 GitHub Pages 로 배포하던 사이트가 남아 있습니다.
+> **더 이상 갱신되지 않으니** 최신 내용은 위 폴더에서 봐주세요.
 
-최초 1회 설치:
+## ✍️ 문서 규칙
 
-```bash
-pip install -r requirements-docs.txt
-```
+교안을 쓰거나 고치기 전에 아래를 읽어주세요. 규칙이 충돌하면 **`references/` > `plans/00` > `CLAUDE.md`** 순입니다.
 
-**방법 1 — HTML 파일로 열기** (배포를 기다리기 싫을 때)
-
-```bash
-powershell -ExecutionPolicy Bypass -File preview-docs.ps1
-```
-
-`site-offline/` 에 실제 `.html` 파일로 빌드한 뒤 브라우저를 띄웁니다.
-[mkdocs.offline.yml](mkdocs.offline.yml) 이 `use_directory_urls: false` 와 Material `offline` 플러그인을 써서
-서버 없이 `file://` 로 열어도 링크·검색이 동작합니다.
-
-**방법 2 — 개발 서버** (문서를 계속 고칠 때. 저장하면 자동 새로고침)
-
-```bash
-mkdocs serve
-```
-
-> `site_url`이 설정되어 있어 개발 서버 주소는 루트가 아닌
-> `http://127.0.0.1:8000/kdc-meta-verse-nocode-lecture/` 입니다.
-
-### 배포
-
-`main` 브랜치에 아래 경로가 변경되면 [deploy-docs.yml](.github/workflows/deploy-docs.yml)이 자동 실행됩니다.
-
-- `Docs/1. NoCode/**`
-- `mkdocs.yml`
-- `requirements-docs.txt`
-
-수동 실행은 GitHub Actions 탭의 **Deploy Docs to GitHub Pages → Run workflow**.
-
-> [!IMPORTANT]
-> 최초 1회, 저장소 **Settings → Pages → Build and deployment → Source**를
-> **GitHub Actions**로 바꿔주셔야 배포가 동작합니다.
-
-### 목차 편집
-
-폴더마다 `.pages` 파일로 제목과 순서를 정합니다.
-
-```yaml
-title: 🎮 Unity Basic
-nav:
-  - '01. Unity와 첫 만남': 01_unity_engine_nocode.md
-```
-
-### 사용 중인 마크다운 확장
-
-| 문법 | 담당 확장 |
+| 문서 | 무엇이 |
 | :--- | :--- |
-| `!!! note` 강조 박스 | `admonition` |
-| `??? success` 접히는 블록 | `pymdownx.details` |
-| ` ```mermaid ` 다이어그램 | `pymdownx.superfences` (Material 내장 렌더러) |
-| `- [ ]` 체크리스트 | `pymdownx.tasklist` |
-| `=== "탭"` 탭 블록 | `pymdownx.tabbed` |
-| 표 · 각주 · 약어 | `tables` / `footnotes` / `abbr` |
-| 이미지 클릭 확대 | `mkdocs-glightbox` |
-| 페이지 최종 수정일 | `git-revision-date-localized` |
+| [CLAUDE.md](CLAUDE.md) | 변환 원칙 · 표현 치환표 · **마크다운 표기 규칙** · 금지 사항 |
+| [plans/00_교안_생성_프롬프트.md](plans/00_교안_생성_프롬프트.md) | 실습 설계법 · 고정 어휘집 · 자가 검증 |
+| [references/](references/) | 골든 레퍼런스 — 구조·톤의 기준 |
+
+강조 블록은 `> 🎯 **제목**`, 접기는 `<details>` 를 씁니다.
+`!!!` · `???` 같은 MkDocs 전용 문법은 **GitHub 에서 글자 그대로 노출되므로 쓰지 않습니다.**
+
+## ✅ 자가 검증
+
+문서를 고쳤으면 실행해주세요. **오류 0건이어야 통과**입니다.
+
+```bash
+python tools/check_docs.py
+```
+
+검사 항목 — 사이트 전용 문법 잔재 · `<details>` 짝과 빈 줄 · 강조 블록 형식 ·
+C# 코드블록 · 코드 펜스 짝 · 내부 링크 대상 · 정리 문제와 정답 개수 · 금지 용어.
+
+## 📁 폴더 구조
+
+```
+kdc-meta-verse-nocode-lecture/
+├── HANDOFF.md          인수인계 — 전체 현황
+├── CLAUDE.md           프로젝트 상시 규칙
+│
+├── Docs/
+│   ├── 0. Origin/      원본 교안 25개 (프로그래머용)
+│   └── 1. NoCode/      ★ 변환 산출물 — 교안 + VOD 스크립트
+│
+├── plans/              계획 문서 (05=U6/U7 지시서 · 07=QA 확인목록)
+├── references/         골든 레퍼런스 (손대지 말 것)
+├── source/             변환 대기 원본
+├── tools/              한글 문자셋 2350자 · 폰트 제작 절차 · 문서 검증기
+│
+└── Assets/_NoCodeKit/  교육용 컴포넌트 21개
+```
+
+## 🎮 Unity 프로젝트
+
+| | |
+| :--- | :--- |
+| Unity 버전 | **6000.3.15f1** |
+| 입력 방식 | **새 Input System 전용** (`activeInputHandler: 1`) |
+| XR | XRI **3.3.2** · OpenXR · XR Management |
+| 교육용 컴포넌트 | `Assets/_NoCodeKit/Scripts/` — 21개 |
+
+> [!WARNING]
+> 새 에셋(씬 · 프리팹 · 폰트 · 재질)을 만들면 **`.meta` 를 짝으로 함께 커밋**해주세요.
+> 빠뜨리면 다른 PC 에서 GUID 가 어긋나 부품 연결이 끊어집니다.
+>
+> ```bash
+> git status --short Assets
+> ```

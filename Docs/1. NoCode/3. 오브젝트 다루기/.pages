@@ -1,6 +1,0 @@
-title: 🧊 오브젝트 다루기
-nav:
-  - '20. X · Y · Z, 드디어': 20_transform_nocode.md
-  - '20. VOD 녹화 스크립트': 20_transform_vod_script.md
-  - '21. 떨어뜨리고 부딪히기': 21_rigidbody_collider_nocode.md
-  - '21. VOD 녹화 스크립트': 21_rigidbody_collider_vod_script.md

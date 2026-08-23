@@ -1,8 +1,0 @@
-title: 🎯 사격장
-nav:
-  - '22. 사격장을 만들고 걸어 다니기': 22_clay_world_nocode.md
-  - '23. 표적이 날아오게': 23_clay_target_nocode.md
-  - '24. 총을 쏘게': 24_clay_gun_nocode.md
-  - '25. 맞으면 터지고 점수가 오르게': 25_clay_hit_score_nocode.md
-  - '26. 난이도와 제한 시간': 26_clay_difficulty_nocode.md
-  - '27. 배경과 소리, 그리고 완성': 27_clay_polish_nocode.md

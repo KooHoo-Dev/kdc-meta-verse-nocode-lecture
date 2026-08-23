@@ -1,5 +1,0 @@
-title: 🥽 XR
-nav:
-  - '01. XR 환경 설정': 01_xr_setup.md
-  - '02. XR Origin & Locomotion': 02_xr_origin_locomotion.md
-  - '03. XR Interaction Architecture': 03_xr_interaction_architecture.md
